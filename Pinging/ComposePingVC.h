@@ -10,7 +10,7 @@
 #import <Parse/Parse.h>
 #import <MessageUI/MessageUI.h>
 
-@interface ComposePingVC : UIViewController <UITableViewDataSource, UITableViewDelegate, MFMessageComposeViewControllerDelegate>
+@interface ComposePingVC : UIViewController <UITableViewDataSource, UITableViewDelegate, MFMessageComposeViewControllerDelegate, UICollectionViewDataSource>
 
 @property (nonatomic, strong) PFRelation *friendsRelation;
 @property (nonatomic, strong) NSArray *friends;
@@ -27,6 +27,8 @@
 @property (strong, nonatomic) IBOutlet UIView *previewYakView;
 @property (weak, nonatomic) IBOutlet UIView *navigationBarView;
 @property (weak, nonatomic) IBOutlet UIView *sendBarView;
+@property (weak, nonatomic) IBOutlet UICollectionView *recipientsCollectionView;
+@property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *recipientsCollectionFlowLayout;
 
 
 

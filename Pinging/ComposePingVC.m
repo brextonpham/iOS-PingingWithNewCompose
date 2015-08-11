@@ -119,7 +119,6 @@
         [self.recipients removeObject:user.objectId];
         [self.nonVerifiedRecipients removeObject:[user objectForKey:@"phone"]];
     }
-    
 }
 
 - (IBAction)sendButton:(id)sender {
@@ -195,7 +194,8 @@
 - (void)displaySMSComposerSheet {
     MFMessageComposeViewController *picker = [[MFMessageComposeViewController alloc] init];
     picker.messageComposeDelegate = self;
-//    picker.recipients = [NSArray arrayWithObjects:@"1234", @"2345", nil];
+    //picker.recipients = [NSArray arrayWithObjects:@"1234", @"2345", nil];
+    picker.recipients = [[NSArray alloc] initWithArray:self.nonVerifiedRecipients copyItems:YES];
     picker.body = @"I'm sharing a yak with you! Check it out :) http://yak.co/7384";
     
     [self presentViewController:picker animated:YES completion:nil];
@@ -222,6 +222,26 @@
             break;
     }
     [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+#pragma mark - UICollectionViewDatasource methods
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    NSInteger totalRecipients = [self.recipients count] + [self.nonVerifiedRecipients count];
+    return totalRecipients;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString * cellIdentifier = @"contactCollectionViewCell";
+    UICollectionViewCell * cell = (UICollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
+    //cell.delegate = self;
+    
+    CGFloat red = (float)rand() / (float)RAND_MAX;
+    CGFloat green = (float)rand() / (float)RAND_MAX;
+    CGFloat blue = (float)rand() / (float)RAND_MAX;
+    cell.backgroundColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0f];
+    
+    return cell;
 }
 
 @end

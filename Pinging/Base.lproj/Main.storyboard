@@ -269,22 +269,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jT8-dS-DKI">
-                                <rect key="frame" x="0.0" y="620" width="375" height="47"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dax-KO-WrA">
-                                        <rect key="frame" x="303" y="9" width="46" height="30"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
-                                        <state key="normal" title="SEND">
-                                            <color key="titleColor" red="0.25490196078431371" green="0.68627450980392157" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="sendButton:" destination="8VJ-Id-9dr" eventType="touchUpInside" id="Bp0-aL-wHY"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zdD-PE-n6z">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="68"/>
                                 <subviews>
@@ -440,6 +424,42 @@
                                     <outlet property="delegate" destination="8VJ-Id-9dr" id="MUO-ZN-eWD"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jT8-dS-DKI">
+                                <rect key="frame" x="0.0" y="620" width="375" height="47"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dax-KO-WrA">
+                                        <rect key="frame" x="303" y="9" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
+                                        <state key="normal" title="SEND">
+                                            <color key="titleColor" red="0.25490196078431371" green="0.68627450980392157" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sendButton:" destination="8VJ-Id-9dr" eventType="touchUpInside" id="Bp0-aL-wHY"/>
+                                        </connections>
+                                    </button>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TBx-b3-3Wb">
+                                        <rect key="frame" x="8" y="0.0" width="293" height="47"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="G5S-h5-Y2a">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="contactCollectionViewCell" id="jwG-4G-7Fg">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                </subviews>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -449,6 +469,8 @@
                         <outlet property="navigationBarView" destination="zdD-PE-n6z" id="nLU-tt-RqP"/>
                         <outlet property="previewYakLabel" destination="itV-HI-Z2y" id="emj-L3-yVY"/>
                         <outlet property="previewYakView" destination="7en-mT-9op" id="goA-M8-rEr"/>
+                        <outlet property="recipientsCollectionFlowLayout" destination="G5S-h5-Y2a" id="5ts-nI-kug"/>
+                        <outlet property="recipientsCollectionView" destination="TBx-b3-3Wb" id="cJk-da-s4T"/>
                         <outlet property="sendBarView" destination="jT8-dS-DKI" id="U5Z-1w-gBp"/>
                     </connections>
                 </viewController>
