@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D62B76FC1B7A673A00163A49 /* RecipientsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D62B76FB1B7A673A00163A49 /* RecipientsCollectionViewCell.m */; };
 		D64BBE491B73E6650088DE2D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D64BBE481B73E6650088DE2D /* AVFoundation.framework */; };
 		D64BBE7E1B7518A70088DE2D /* Me2VC.m in Sources */ = {isa = PBXBuildFile; fileRef = D64BBE7D1B7518A70088DE2D /* Me2VC.m */; };
 		D64BBE801B78EE3C0088DE2D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D64BBE7F1B78EE3C0088DE2D /* MessageUI.framework */; };
@@ -75,6 +76,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D62B76FA1B7A673A00163A49 /* RecipientsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipientsCollectionViewCell.h; sourceTree = "<group>"; };
+		D62B76FB1B7A673A00163A49 /* RecipientsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipientsCollectionViewCell.m; sourceTree = "<group>"; };
 		D64BBE481B73E6650088DE2D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D64BBE7C1B7518A70088DE2D /* Me2VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Me2VC.h; sourceTree = "<group>"; };
 		D64BBE7D1B7518A70088DE2D /* Me2VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Me2VC.m; sourceTree = "<group>"; };
@@ -235,6 +238,8 @@
 				D6AC7DFF1B66E37F007F8332 /* SignUpVC.h */,
 				D6AC7E001B66E37F007F8332 /* SignUpVC.m */,
 				D6AC7DB91B66DD4B007F8332 /* Main.storyboard */,
+				D62B76FA1B7A673A00163A49 /* RecipientsCollectionViewCell.h */,
+				D62B76FB1B7A673A00163A49 /* RecipientsCollectionViewCell.m */,
 				D690B9111B716CEC0017832C /* MeVC.h */,
 				D690B9121B716CEC0017832C /* MeVC.m */,
 				D64BBE7C1B7518A70088DE2D /* Me2VC.h */,
@@ -437,6 +442,7 @@
 				D6AC7E171B68221F007F8332 /* MainFeedVC.m in Sources */,
 				D6AC7E141B681737007F8332 /* SendAYakVC.m in Sources */,
 				D67F51D31B696E720095ED1C /* ContactsVC.m in Sources */,
+				D62B76FC1B7A673A00163A49 /* RecipientsCollectionViewCell.m in Sources */,
 				D6AC7E111B67F9EC007F8332 /* MainFeedCell.m in Sources */,
 				D6AC7E011B66E37F007F8332 /* SignUpVC.m in Sources */,
 				D6AC7DB51B66DD4B007F8332 /* AppDelegate.m in Sources */,

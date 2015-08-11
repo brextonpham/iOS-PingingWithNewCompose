@@ -8,6 +8,7 @@
 
 #import "ComposePingVC.h"
 #import "PingContactCell.h"
+#import "RecipientsCollectionViewCell.h"
 
 @interface ComposePingVC ()
 
@@ -43,6 +44,8 @@
     self.contactsTableView.layer.borderWidth = 0.5f;
     
     self.previewYakLabel.text = [self.message objectForKey:@"fileContents"];
+    
+    self.recipientsCollectionView.dataSource = self;
     
 }
 
@@ -111,6 +114,7 @@
             [self.nonVerifiedRecipients addObject:[user objectForKey:@"phone"]];
             NSLog(@"phone number added: %@", [user objectForKey:@"phone"]);
             //NSLog(@"nonVerifiedRecipients count: %@", [self.nonVerifiedRecipients count]);
+            [self.recipients addObject:user.objectId];
         } else {
             [self.recipients addObject:user.objectId];
         }
@@ -119,6 +123,8 @@
         [self.recipients removeObject:user.objectId];
         [self.nonVerifiedRecipients removeObject:[user objectForKey:@"phone"]];
     }
+    
+    [self.recipientsCollectionView reloadData];
 }
 
 - (IBAction)sendButton:(id)sender {
@@ -228,18 +234,27 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     NSInteger totalRecipients = [self.recipients count] + [self.nonVerifiedRecipients count];
-    return totalRecipients;
+    return [self.recipients count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     static NSString * cellIdentifier = @"contactCollectionViewCell";
-    UICollectionViewCell * cell = (UICollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
+    PFUser *user = [self.friends objectAtIndex:indexPath.row];
+    RecipientsCollectionViewCell * cell = (RecipientsCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     //cell.delegate = self;
     
+    /*
     CGFloat red = (float)rand() / (float)RAND_MAX;
     CGFloat green = (float)rand() / (float)RAND_MAX;
     CGFloat blue = (float)rand() / (float)RAND_MAX;
     cell.backgroundColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0f];
+    */
+    
+    if ([[user objectForKey:@"verificationStatus"] isEqualToString:@"True"]) {
+        [cell.imageView setImage:self.verifiedPictures[arc4random_uniform(3)]];
+    } else {
+        [cell.imageView setImage:self.notVerifiedPictures[arc4random_uniform(3)]];
+    }
     
     return cell;
 }
