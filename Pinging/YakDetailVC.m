@@ -18,17 +18,12 @@
     [super viewDidLoad];
     
     NSString *yak = [self.message objectForKey:@"fileContents"];
+    NSLog(@"%@", yak);
     self.yakLabel.text = [self.message objectForKey:@"fileContents"];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    /*
-    if ([segue.identifier isEqualToString:@"showPing"]) {
-        [segue.destinationViewController setHidesBottomBarWhenPushed:YES];
-        PingContactsTableViewController *pingController = (PingContactsTableViewController *)segue.destinationViewController;
-        pingController.message = self.message;
-    }
-     */
+
 }
 
 

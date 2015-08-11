@@ -43,6 +43,7 @@
     self.contactsTableView.layer.borderColor = [UIColor colorWithRed:236.0/255.0 green:236.0/255.0 blue:236.0/255.0 alpha:1].CGColor;
     self.contactsTableView.layer.borderWidth = 0.5f;
     
+    NSLog(@"%@", [self.message objectForKey:@"fileContents"]);
     self.previewYakLabel.text = [self.message objectForKey:@"fileContents"];
     
     self.recipientsCollectionView.dataSource = self;
@@ -241,14 +242,7 @@
     static NSString * cellIdentifier = @"contactCollectionViewCell";
     PFUser *user = [self.friends objectAtIndex:indexPath.row];
     RecipientsCollectionViewCell * cell = (RecipientsCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
-    //cell.delegate = self;
     
-    /*
-    CGFloat red = (float)rand() / (float)RAND_MAX;
-    CGFloat green = (float)rand() / (float)RAND_MAX;
-    CGFloat blue = (float)rand() / (float)RAND_MAX;
-    cell.backgroundColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0f];
-    */
     
     if ([[user objectForKey:@"verificationStatus"] isEqualToString:@"True"]) {
         [cell.imageView setImage:self.verifiedPictures[arc4random_uniform(3)]];
