@@ -157,4 +157,16 @@
     [cell.yakLabel setText:yak];
 }
 
+- (IBAction)clickPing:(id)sender {
+    NSLog(@"test");
+    UIButton *button = (UIButton *) sender;
+    UITableViewCell *cellView = (UITableViewCell *)[[button superview] superview];
+    NSIndexPath *path = [self.tableView indexPathForCell:cellView];
+    NSInteger row = [path row];
+    NSLog(@"the magic number is %ld", (long)row);
+    self.selectedMessage = [self.messages objectAtIndex:row];
+    [self performSegueWithIdentifier:@"showComposePing" sender:self];
+}
+
+
 @end

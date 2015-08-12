@@ -96,11 +96,19 @@ AVCaptureStillImageOutput *stillImageOutput;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+/*
 //"send action"
 - (IBAction)sendButton:(id)sender {
     [self uploadYak];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+ */
+
+- (IBAction)send:(id)sender {
+    [self uploadYak];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 - (IBAction)takePhoto:(id)sender {
     AVCaptureConnection *videoConnection = nil;

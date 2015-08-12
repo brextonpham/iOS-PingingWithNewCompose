@@ -57,7 +57,7 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomPrototypeCell" rowHeight="91" id="cLg-3L-dV2" customClass="MainFeedCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CustomPrototypeCell" rowHeight="91" id="cLg-3L-dV2" customClass="MainFeedCell">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cLg-3L-dV2" id="Iq6-Ym-euf">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -127,17 +127,13 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fl1-w5-wks">
-                                                    <rect key="frame" x="63" y="18" width="188" height="46"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </view>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNi-Zc-G0i">
-                                                    <rect key="frame" x="8" y="72" width="284" height="16"/>
-                                                    <state key="normal" backgroundImage="group_2x.png">
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNi-Zc-G0i">
+                                                    <rect key="frame" x="8" y="64" width="329" height="19"/>
+                                                    <state key="normal" backgroundImage="actionsssssssss">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="8VJ-Id-9dr" kind="modal" identifier="showComposePing" id="h95-Pm-Ppb"/>
+                                                        <action selector="clickPing:" destination="IQR-Ey-zMc" eventType="touchUpInside" id="T24-A7-TVl"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -251,11 +247,12 @@
                         <outlet property="tableView" destination="vDf-9y-fYi" id="1lO-dK-1m6"/>
                         <segue destination="zPk-zZ-FAw" kind="push" identifier="showLogin" id="4dA-jw-gPD"/>
                         <segue destination="RMl-6c-ZgN" kind="push" identifier="showDetail" id="dvI-bx-cKA"/>
+                        <segue destination="8VJ-Id-9dr" kind="presentation" identifier="showComposePing" id="oNt-ob-Plw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aib-8y-hBh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1036.5" y="538.5"/>
+            <point key="canvasLocation" x="1172.5" y="1440.5"/>
         </scene>
         <!--Compose PingVC-->
         <scene sceneID="2AW-au-1hz">
@@ -299,13 +296,6 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="   Leave a note here..." translatesAutoresizingMaskIntoConstraints="NO" id="GdN-gX-W65">
-                                <rect key="frame" x="0.0" y="76" width="375" height="33"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="textColor" red="0.80784313725490198" green="0.80784313725490198" blue="0.80784313725490198" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sm2-Ky-0Zo">
                                 <rect key="frame" x="0.0" y="117" width="375" height="60"/>
                                 <subviews>
@@ -473,6 +463,11 @@
                                     </collectionView>
                                 </subviews>
                             </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Leave a note here..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WXE-yu-j42">
+                                <rect key="frame" x="16" y="79" width="336" height="30"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -489,7 +484,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="05Z-4R-gt8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1220.5" y="1555.5"/>
+            <point key="canvasLocation" x="1542.5" y="1618.5"/>
         </scene>
         <!--SendA YakVC-->
         <scene sceneID="dbR-7S-4fz">
@@ -573,6 +568,9 @@
                                             <color key="titleColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="send:" destination="N8p-9f-RX4" eventType="touchUpInside" id="Gk2-QY-7K3"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1055,9 +1053,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="actionsssssssss" width="750" height="38"/>
         <image name="compose" width="21" height="22"/>
         <image name="downvote.png" width="24" height="14"/>
-        <image name="group_2x.png" width="1640" height="78"/>
         <image name="home-selected.png" width="34" height="21"/>
         <image name="left-arrow" width="8" height="12"/>
         <image name="location-tag" width="228" height="26"/>
