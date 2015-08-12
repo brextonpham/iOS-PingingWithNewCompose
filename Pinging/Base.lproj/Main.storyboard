@@ -544,10 +544,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dTx-BK-idN">
-                                <rect key="frame" x="0.0" y="411" width="375" height="260"/>
+                                <rect key="frame" x="0.0" y="399" width="375" height="272"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="58d-P9-y4G">
-                                        <rect key="frame" x="0.0" y="100" width="375" height="156"/>
+                                        <rect key="frame" x="0.0" y="112" width="375" height="156"/>
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -559,7 +559,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QnP-yW-2qy">
-                                <rect key="frame" x="-11" y="387" width="386" height="39"/>
+                                <rect key="frame" x="-6" y="375" width="386" height="39"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hrn-IG-WCI">
                                         <rect key="frame" x="305" y="5" width="46" height="30"/>
