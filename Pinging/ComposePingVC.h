@@ -32,6 +32,7 @@
 @property (weak, nonatomic) IBOutlet UIView *sendBarView;
 @property (weak, nonatomic) IBOutlet UICollectionView *recipientsCollectionView;
 @property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *recipientsCollectionFlowLayout;
+@property (weak, nonatomic) IBOutlet UITextField *textField;
 
 
 

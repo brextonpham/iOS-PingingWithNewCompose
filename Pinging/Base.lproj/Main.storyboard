@@ -480,6 +480,7 @@
                         <outlet property="recipientsCollectionFlowLayout" destination="G5S-h5-Y2a" id="5ts-nI-kug"/>
                         <outlet property="recipientsCollectionView" destination="TBx-b3-3Wb" id="cJk-da-s4T"/>
                         <outlet property="sendBarView" destination="jT8-dS-DKI" id="U5Z-1w-gBp"/>
+                        <outlet property="textField" destination="WXE-yu-j42" id="VQp-ET-25Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="05Z-4R-gt8" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -52,6 +52,9 @@
     self.contactPictureArray = [[NSMutableArray alloc] init];
     self.dictionary = [[NSDictionary alloc] init];
     
+    self.textField.delegate = self;
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -165,7 +168,7 @@
         }
     }
     
-    //[self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 
 }
 
@@ -282,6 +285,11 @@
     //[cell.imageView setImage:friendImage];
     
     return cell;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.textField resignFirstResponder];
 }
 
 @end
