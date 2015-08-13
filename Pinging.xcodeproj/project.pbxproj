@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D62B76FC1B7A673A00163A49 /* RecipientsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D62B76FB1B7A673A00163A49 /* RecipientsCollectionViewCell.m */; };
+		D62B77011B7BC43200163A49 /* MSCellAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = D62B76FE1B7BC43200163A49 /* MSCellAccessory.m */; };
+		D62B77021B7BC43200163A49 /* UIView+AccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D62B77001B7BC43200163A49 /* UIView+AccessViewController.m */; };
 		D64BBE491B73E6650088DE2D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D64BBE481B73E6650088DE2D /* AVFoundation.framework */; };
 		D64BBE7E1B7518A70088DE2D /* Me2VC.m in Sources */ = {isa = PBXBuildFile; fileRef = D64BBE7D1B7518A70088DE2D /* Me2VC.m */; };
 		D64BBE801B78EE3C0088DE2D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D64BBE7F1B78EE3C0088DE2D /* MessageUI.framework */; };
@@ -78,6 +80,10 @@
 /* Begin PBXFileReference section */
 		D62B76FA1B7A673A00163A49 /* RecipientsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipientsCollectionViewCell.h; sourceTree = "<group>"; };
 		D62B76FB1B7A673A00163A49 /* RecipientsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipientsCollectionViewCell.m; sourceTree = "<group>"; };
+		D62B76FD1B7BC43200163A49 /* MSCellAccessory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSCellAccessory.h; path = ../../AFourYearOldsYikYak/AFourYearOldsYikYak/MSCellAccessory/MSCellAccessory.h; sourceTree = "<group>"; };
+		D62B76FE1B7BC43200163A49 /* MSCellAccessory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSCellAccessory.m; path = ../../AFourYearOldsYikYak/AFourYearOldsYikYak/MSCellAccessory/MSCellAccessory.m; sourceTree = "<group>"; };
+		D62B76FF1B7BC43200163A49 /* UIView+AccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+AccessViewController.h"; path = "../../AFourYearOldsYikYak/AFourYearOldsYikYak/MSCellAccessory/UIView+AccessViewController.h"; sourceTree = "<group>"; };
+		D62B77001B7BC43200163A49 /* UIView+AccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+AccessViewController.m"; path = "../../AFourYearOldsYikYak/AFourYearOldsYikYak/MSCellAccessory/UIView+AccessViewController.m"; sourceTree = "<group>"; };
 		D64BBE481B73E6650088DE2D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D64BBE7C1B7518A70088DE2D /* Me2VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Me2VC.h; sourceTree = "<group>"; };
 		D64BBE7D1B7518A70088DE2D /* Me2VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Me2VC.m; sourceTree = "<group>"; };
@@ -233,6 +239,10 @@
 				D6AC7DFB1B66DE34007F8332 /* Frameworks */,
 				D6AC7DB31B66DD4B007F8332 /* AppDelegate.h */,
 				D6AC7DB41B66DD4B007F8332 /* AppDelegate.m */,
+				D62B76FD1B7BC43200163A49 /* MSCellAccessory.h */,
+				D62B76FE1B7BC43200163A49 /* MSCellAccessory.m */,
+				D62B76FF1B7BC43200163A49 /* UIView+AccessViewController.h */,
+				D62B77001B7BC43200163A49 /* UIView+AccessViewController.m */,
 				D6AC7DFC1B66E22F007F8332 /* MainFeedTVC.h */,
 				D6AC7DFD1B66E22F007F8332 /* MainFeedTVC.m */,
 				D6AC7DFF1B66E37F007F8332 /* SignUpVC.h */,
@@ -441,6 +451,7 @@
 				D6AC7E2D1B696719007F8332 /* PingContactCell.m in Sources */,
 				D6AC7E171B68221F007F8332 /* MainFeedVC.m in Sources */,
 				D6AC7E141B681737007F8332 /* SendAYakVC.m in Sources */,
+				D62B77021B7BC43200163A49 /* UIView+AccessViewController.m in Sources */,
 				D67F51D31B696E720095ED1C /* ContactsVC.m in Sources */,
 				D62B76FC1B7A673A00163A49 /* RecipientsCollectionViewCell.m in Sources */,
 				D6AC7E111B67F9EC007F8332 /* MainFeedCell.m in Sources */,
@@ -454,6 +465,7 @@
 				D6AC7E071B67D958007F8332 /* YakDetailVC.m in Sources */,
 				D67F51D61B6975BE0095ED1C /* EditContactsVC.m in Sources */,
 				D690B9041B7000F00017832C /* MoreVC.m in Sources */,
+				D62B77011B7BC43200163A49 /* MSCellAccessory.m in Sources */,
 				D64BBE7E1B7518A70088DE2D /* Me2VC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

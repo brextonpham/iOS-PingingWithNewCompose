@@ -11,6 +11,7 @@
 #import "MainFeedCell.h"
 #import "ComposePingVC.h"
 #import "MoreVC.h"
+#import "MSCellAccessory.h"
 
 @interface MainFeedVC ()
 
@@ -86,6 +87,7 @@
     return cell;
 }
 
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     //leading to detailed message view
     self.selectedMessage = [self.messages objectAtIndex:indexPath.row];
@@ -156,6 +158,7 @@
     NSString *yak = item;
     [cell.yakLabel setText:yak];
 }
+
 
 - (IBAction)clickPing:(id)sender {
     NSLog(@"test");

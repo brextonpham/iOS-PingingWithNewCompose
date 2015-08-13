@@ -20,7 +20,10 @@
 @property (strong, nonatomic) NSMutableArray *notVerifiedPictures;
 @property (strong, nonatomic) PFUser *currentUser;
 @property (strong, nonatomic) NSMutableArray *nonVerifiedRecipients;
+@property (strong, nonatomic) NSMutableArray *contactPictureArray;
+@property (strong, nonatomic) NSDictionary *dictionary;
 @property BOOL textDismissed;
+@property int number;
 
 @property (weak, nonatomic) IBOutlet UITableView *contactsTableView;
 @property (weak, nonatomic) IBOutlet UILabel *previewYakLabel;

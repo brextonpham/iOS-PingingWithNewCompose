@@ -19,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
     UIImage *verifiedPicture1 = [UIImage imageNamed:@"icon-badge1.png"];
     UIImage *verifiedPicture2 = [UIImage imageNamed:@"icon-color-badge2.png"];
     UIImage *verifiedPicture3 = [UIImage imageNamed:@"icon-color2-badge3.png"];
@@ -48,6 +49,9 @@
     
     self.recipientsCollectionView.dataSource = self;
     
+    self.contactPictureArray = [[NSMutableArray alloc] init];
+    self.dictionary = [[NSDictionary alloc] init];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -63,8 +67,16 @@
         } else {
             self.friends = objects;
             [self.contactsTableView reloadData];
+            for (int i = 0; i < [self.friends count]; i++) {
+                NSNumber *randomNumber = @(arc4random_uniform(3));
+                [self.contactPictureArray addObject:randomNumber];
+                //NSLog(@"%@", [randomNumber integerValue]);
+            }
         }
     }];
+    
+    self.dictionary = [NSDictionary dictionaryWithObjects:self.contactPictureArray forKeys:self.friends];
+
 }
 
 #pragma mark - Table view data source
@@ -87,13 +99,20 @@
     cell.contactPhoneLabel.text = [user objectForKey:@"phone"];
     
     if ([[user objectForKey:@"verificationStatus"] isEqualToString:@"True"]) {
-        [cell.contactsLogo setImage:self.verifiedPictures[arc4random_uniform(3)]];
+        NSNumber *randomNumber = self.contactPictureArray[indexPath.row];
+        
+        NSNumber *number = [self.dictionary objectForKey:user];
+        NSInteger integer = [number integerValue];
+        [cell.contactsLogo setImage:self.verifiedPictures[integer]];
          } else {
-             [cell.contactsLogo setImage:self.notVerifiedPictures[arc4random_uniform(3)]];
+             NSNumber *number = [self.dictionary objectForKey:user];
+             NSInteger integer = [number integerValue];
+             NSNumber *randomNumber = @(arc4random_uniform(3));
+             [cell.contactsLogo setImage:self.notVerifiedPictures[integer]];
          }
     
     
-    if ([self.recipients containsObject:user.objectId]) {
+    if ([self.recipients containsObject:user]) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     } else {
         cell.accessoryType = UITableViewCellAccessoryNone;
@@ -115,15 +134,17 @@
             [self.nonVerifiedRecipients addObject:[user objectForKey:@"phone"]];
             NSLog(@"phone number added: %@", [user objectForKey:@"phone"]);
             //NSLog(@"nonVerifiedRecipients count: %@", [self.nonVerifiedRecipients count]);
-            [self.recipients addObject:user.objectId];
+            [self.recipients addObject:user];
         } else {
-            [self.recipients addObject:user.objectId];
+            [self.recipients addObject:user];
         }
     } else {
         cell.accessoryType = UITableViewCellAccessoryNone;
-        [self.recipients removeObject:user.objectId];
+        [self.recipients removeObject:user];
         [self.nonVerifiedRecipients removeObject:[user objectForKey:@"phone"]];
     }
+    
+    self.number = indexPath.row;
     
     [self.recipientsCollectionView reloadData];
 }
@@ -240,15 +261,25 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     static NSString * cellIdentifier = @"contactCollectionViewCell";
-    PFUser *user = [self.friends objectAtIndex:indexPath.row];
+    PFUser *user = [self.recipients objectAtIndex:indexPath.row];
     RecipientsCollectionViewCell * cell = (RecipientsCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     
+    NSInteger pictureIndex = [self.friends indexOfObject:user];
+    PingContactCell* friendCell = (PingContactCell*)[self tableView:self.contactsTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:pictureIndex inSection:0]];
+    UIImage* friendImage = friendCell.contactsLogo.image;
+    
+    NSNumber *number = [self.dictionary objectForKey:user];
+    int integer = [number integerValue];
+    
+    //[randomNumber integerValue]
     
     if ([[user objectForKey:@"verificationStatus"] isEqualToString:@"True"]) {
-        [cell.imageView setImage:self.verifiedPictures[arc4random_uniform(3)]];
+        [cell.imageView setImage:self.verifiedPictures[integer]];
     } else {
-        [cell.imageView setImage:self.notVerifiedPictures[arc4random_uniform(3)]];
+        [cell.imageView setImage:self.notVerifiedPictures[integer]];
     }
+    
+    //[cell.imageView setImage:friendImage];
     
     return cell;
 }

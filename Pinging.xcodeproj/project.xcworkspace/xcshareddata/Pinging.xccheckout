@@ -7,22 +7,22 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>D998646B-A53B-4CB2-B123-C3AC6111A822</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Pinging</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>0879C61F338C515B08083B88AF9E2291A2206988</key>
 		<string>https://github.com/brextonpham/iOS-PingingWithNewCompose.git</string>
-		<key>7CBF38BB99F2DAE98F3D167EAF61299F160CF65B</key>
-		<string>https://github.com/brextonpham/iOS-Pinging.git</string>
+		<key>23A95740B5E8A8093C02FB973666111BEF43B08A</key>
+		<string>https://github.com/brextonpham/AFourYearOldsYikYak.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Pinging.xcodeproj</string>
+	<string>Pinging.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>0879C61F338C515B08083B88AF9E2291A2206988</key>
 		<string>../..</string>
-		<key>7CBF38BB99F2DAE98F3D167EAF61299F160CF65B</key>
-		<string>../../../Pinging</string>
+		<key>23A95740B5E8A8093C02FB973666111BEF43B08A</key>
+		<string>../../../AFourYearOldsYikYak</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/brextonpham/iOS-PingingWithNewCompose.git</string>
@@ -36,17 +36,17 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>0879C61F338C515B08083B88AF9E2291A2206988</string>
+			<string>23A95740B5E8A8093C02FB973666111BEF43B08A</string>
 			<key>IDESourceControlWCCName</key>
-			<string>iOS-PingingWithNewCompose</string>
+			<string>AFourYearOldsYikYak</string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>7CBF38BB99F2DAE98F3D167EAF61299F160CF65B</string>
+			<string>0879C61F338C515B08083B88AF9E2291A2206988</string>
 			<key>IDESourceControlWCCName</key>
-			<string>Pinging</string>
+			<string>iOS-PingingWithNewCompose</string>
 		</dict>
 	</array>
 </dict>
