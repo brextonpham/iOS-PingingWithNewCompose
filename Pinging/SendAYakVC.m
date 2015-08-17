@@ -8,7 +8,7 @@
 
 #import "SendAYakVC.h"
 #import <MobileCoreServices/UTCoreTypes.h>
-#import <AVFoundation/AVFoundation.h>
+
 
 @interface SendAYakVC () 
 
@@ -25,9 +25,6 @@ AVCaptureStillImageOutput *stillImageOutput;
     
     self.navBarView.layer.borderColor = [UIColor colorWithRed:187.0/255.0 green:187.0/255.0 blue:187.0/255.0 alpha:1].CGColor;
     self.navBarView.layer.borderWidth = 0.8f;
-    
-    self.sendView.layer.borderColor = [UIColor colorWithRed:68.0/255.0 green:215.0/255.0 blue:174.0/255.0 alpha:1].CGColor;
-    self.sendView.layer.borderWidth = 0.8f;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -55,36 +52,32 @@ AVCaptureStillImageOutput *stillImageOutput;
     ////////
     
     session = [[AVCaptureSession alloc] init];
-    
     [session setSessionPreset:AVCaptureSessionPresetPhoto];
     
     AVCaptureDevice *inputDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    
     NSError *error;
-    
     AVCaptureDeviceInput *deviceInput = [AVCaptureDeviceInput deviceInputWithDevice:inputDevice error:&error];
     
     if ([session canAddInput:deviceInput]) {
         [session addInput:deviceInput];
-        
     }
     
-    AVCaptureVideoPreviewLayer *previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:session];
-    [previewLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
+    self.previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:session];
+    [self.previewLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
     CALayer *rootLayer = [[self view] layer];
     [rootLayer setMasksToBounds:YES];
     CGRect frame = frameForCapture.frame;
     
-    [previewLayer setFrame:frame];
+    [self.previewLayer setFrame:frame];
     
-    [rootLayer insertSublayer:previewLayer atIndex:0];
+    [rootLayer insertSublayer:self.previewLayer atIndex:0];
     
     stillImageOutput = [[AVCaptureStillImageOutput alloc] init];
-    
     NSDictionary *outputSettings = [[NSDictionary alloc] initWithObjectsAndKeys:AVVideoCodecJPEG, AVVideoCodecKey, nil];
-    
     [stillImageOutput setOutputSettings:outputSettings];
+    
     [session addOutput:stillImageOutput];
+    
     [session startRunning];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
@@ -116,6 +109,21 @@ AVCaptureStillImageOutput *stillImageOutput;
         if (imageDataSampleBuffer != NULL) {
             NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
             UIImage *image = [UIImage imageWithData:imageData];
+            
+            CGRect outputRect = [self.previewLayer metadataOutputRectOfInterestForRect:self.previewLayer.bounds];
+            CGImageRef takenCGImage = image.CGImage;
+            size_t width = CGImageGetWidth(takenCGImage);
+            size_t height = CGImageGetHeight(takenCGImage);
+            CGRect cropRect = CGRectMake(outputRect.origin.x * width, outputRect.origin.y * height, outputRect.size.width * width, outputRect.size.height * height);
+            
+            CGImageRef cropCGImage = CGImageCreateWithImageInRect(takenCGImage, cropRect);
+            image = [UIImage imageWithCGImage:cropCGImage scale:1 orientation:image.imageOrientation];
+            CGImageRelease(cropCGImage);
+            
+            imageView.image = image;
+            
+            self.messageField.editable = YES;
+            [self.messageField becomeFirstResponder];
         }
     }];
 }
@@ -158,6 +166,10 @@ AVCaptureStillImageOutput *stillImageOutput;
             }];
         }
     }];
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView {
+    textView.editable = NO;
 }
 
 - (void)keyboardWillShow:(NSNotification *)notification

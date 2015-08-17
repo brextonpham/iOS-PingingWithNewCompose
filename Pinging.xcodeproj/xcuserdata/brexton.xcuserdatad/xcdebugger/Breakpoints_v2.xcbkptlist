@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pinging/SendAYakVC.h"
-            timestampString = "461088972.369064"
+            timestampString = "461541934.322799"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "-takePhoto:"
             landmarkType = "4">
          </BreakpointContent>

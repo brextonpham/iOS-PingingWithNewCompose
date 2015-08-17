@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 #import "MainFeedTVC.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface SendAYakVC : UIViewController {
     IBOutlet UIView *frameForCapture;
@@ -21,7 +22,7 @@
 @property (nonatomic, strong) NSMutableArray *allUsersObjectIds;
 @property (weak, nonatomic) IBOutlet UIView *navBarView;
 @property (nonatomic, strong) UIImagePickerController *imagePicker;
-@property (weak, nonatomic) IBOutlet UIView *sendView;
+@property (nonatomic, strong) AVCaptureVideoPreviewLayer *previewLayer;
 
 - (IBAction)cancelButton:(id)sender;
 - (IBAction)sendButton:(id)sender;

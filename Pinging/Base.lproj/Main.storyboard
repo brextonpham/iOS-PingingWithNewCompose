@@ -519,11 +519,23 @@
                                             <action selector="cancelButton:" destination="N8p-9f-RX4" eventType="touchUpInside" id="KSq-AV-YLk"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iht-6G-iRY">
+                                        <rect key="frame" x="319" y="30" width="35" height="33"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
+                                        <state key="normal" title="Send">
+                                            <color key="titleColor" red="0.73333333329999995" green="0.73333333329999995" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelButton:" destination="N8p-9f-RX4" eventType="touchUpInside" id="6mw-Jw-pd3"/>
+                                            <action selector="send:" destination="N8p-9f-RX4" eventType="touchUpInside" id="bSi-JT-IOi"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iHa-pj-Izi">
-                                <rect key="frame" x="0.0" y="122" width="375" height="214"/>
+                                <rect key="frame" x="0.0" y="122" width="375" height="36"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="textColor" red="0.26666666666666666" green="0.84313725490196079" blue="0.68235294117647061" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -545,10 +557,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dTx-BK-idN">
-                                <rect key="frame" x="0.0" y="399" width="375" height="272"/>
+                                <rect key="frame" x="0.0" y="456" width="375" height="211"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="58d-P9-y4G">
-                                        <rect key="frame" x="0.0" y="112" width="375" height="156"/>
+                                        <rect key="frame" x="0.0" y="39" width="375" height="229"/>
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -559,37 +571,23 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QnP-yW-2qy">
-                                <rect key="frame" x="-6" y="375" width="386" height="39"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hrn-IG-WCI">
-                                        <rect key="frame" x="305" y="5" width="46" height="30"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
-                                        <state key="normal" title="Send">
-                                            <color key="titleColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="send:" destination="N8p-9f-RX4" eventType="touchUpInside" id="Gk2-QY-7K3"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G41-A8-NMg">
+                                <rect key="frame" x="0.0" y="197" width="375" height="211"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="frameForCapture" destination="dTx-BK-idN" id="JSB-RV-qTl"/>
+                        <outlet property="imageView" destination="G41-A8-NMg" id="D2B-aL-brg"/>
                         <outlet property="messageField" destination="iHa-pj-Izi" id="hcQ-cw-z8R"/>
                         <outlet property="navBarView" destination="8lZ-P0-Kww" id="FoJ-DO-9HP"/>
-                        <outlet property="sendView" destination="QnP-yW-2qy" id="5mS-lV-Z0x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5AF-FA-WJ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1980.5" y="-294.5"/>
+            <point key="canvasLocation" x="1814.5" y="-294.5"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="CWa-Af-X29">
