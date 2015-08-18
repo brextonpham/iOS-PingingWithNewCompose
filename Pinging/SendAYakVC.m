@@ -86,7 +86,7 @@ AVCaptureStillImageOutput *stillImageOutput;
 }
 
 - (IBAction)cancelPicture:(id)sender {
-    //imageView.image = nil;
+    imageView.image = nil;
     [self.messageField resignFirstResponder];
 }
 
