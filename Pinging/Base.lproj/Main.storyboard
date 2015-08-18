@@ -252,7 +252,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aib-8y-hBh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1172.5" y="1440.5"/>
+            <point key="canvasLocation" x="1224.5" y="1582.5"/>
         </scene>
         <!--Compose PingVC-->
         <scene sceneID="2AW-au-1hz">
@@ -855,7 +855,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Bc-xj-hTg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1670.5" y="1555.5"/>
+            <point key="canvasLocation" x="2086.5" y="1239.5"/>
         </scene>
         <!--Edit ContactsVC-->
         <scene sceneID="tpb-xq-c6Q">
