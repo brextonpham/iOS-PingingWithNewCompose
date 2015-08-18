@@ -110,7 +110,7 @@
 		D6AC7DBA1B66DD4B007F8332 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D6AC7DBC1B66DD4B007F8332 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D6AC7DBF1B66DD4B007F8332 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		D6AC7DC51B66DD4B007F8332 /* PingingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PingingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6AC7DC51B66DD4B007F8332 /* Pinging.temp_caseinsensitive_renameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Pinging.temp_caseinsensitive_renameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6AC7DCA1B66DD4B007F8332 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6AC7DCB1B66DD4B007F8332 /* PingingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PingingTests.m; sourceTree = "<group>"; };
 		D6AC7DD51B66DD7A007F8332 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Pinging/Bolts.framework; sourceTree = "<group>"; };
@@ -214,7 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				D6AC7DAC1B66DD4B007F8332 /* Pinging.app */,
-				D6AC7DC51B66DD4B007F8332 /* PingingTests.xctest */,
+				D6AC7DC51B66DD4B007F8332 /* Pinging.temp_caseinsensitive_renameTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -369,7 +369,7 @@
 			);
 			name = PingingTests;
 			productName = PingingTests;
-			productReference = D6AC7DC51B66DD4B007F8332 /* PingingTests.xctest */;
+			productReference = D6AC7DC51B66DD4B007F8332 /* Pinging.temp_caseinsensitive_renameTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -598,7 +598,7 @@
 				);
 				INFOPLIST_FILE = Pinging/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Pinging;
 			};
 			name = Debug;
 		};
@@ -612,7 +612,7 @@
 				);
 				INFOPLIST_FILE = Pinging/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Pinging;
 			};
 			name = Release;
 		};
@@ -630,7 +630,7 @@
 				);
 				INFOPLIST_FILE = PingingTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Pinging.temp_caseinsensitive_renameTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pinging.app/Pinging";
 			};
 			name = Debug;
@@ -645,7 +645,7 @@
 				);
 				INFOPLIST_FILE = PingingTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Pinging.temp_caseinsensitive_renameTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pinging.app/Pinging";
 			};
 			name = Release;

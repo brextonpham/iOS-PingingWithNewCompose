@@ -23,9 +23,11 @@
 @property (weak, nonatomic) IBOutlet UIView *navBarView;
 @property (nonatomic, strong) UIImagePickerController *imagePicker;
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *previewLayer;
+- (IBAction)cancelPicture:(id)sender;
+
+
 
 - (IBAction)cancelButton:(id)sender;
-- (IBAction)sendButton:(id)sender;
 - (IBAction)takePhoto:(id)sender;
 
 - (void)uploadYak; 

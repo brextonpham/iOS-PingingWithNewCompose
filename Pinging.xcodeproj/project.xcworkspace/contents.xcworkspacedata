@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Pinging.xcodeproj">
+      location = "self:/Users/brexton/Documents/Developer/Objective-C/Yik Yak/iOS-PingingWithNewCompose/Pinging.xcodeproj">
    </FileRef>
 </Workspace>

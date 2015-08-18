@@ -85,6 +85,11 @@ AVCaptureStillImageOutput *stillImageOutput;
 
 }
 
+- (IBAction)cancelPicture:(id)sender {
+    //imageView.image = nil;
+    [self.messageField resignFirstResponder];
+}
+
 - (IBAction)cancelButton:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
